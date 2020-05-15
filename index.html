@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<title>as luck would have it</title>
+   		<link href="styles/style.css" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    	<link rel="shortcut icon" href="images/clover.png">
+    	
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="/scripts/jquery.jscroll.js"></script>
+    	
+  	</head>
+  	<body>
+     
+		<div id='field'></div>
+	<!--
+	<img src="images/clover.png" alt="A single clover." width="100px">
+    <h1>My main title</h1>
+	<p>At Mozilla, we’re a global community of</p>
+	<ul> 
+	  <li>technologists</li>
+	</ul>
+	<p>working together ... </p>
+	<a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
+
+	<script src="scripts/main.js"></script> 
+	<script type="text/javascript" src="/scripts/jquery-3.5.0.js"></script>
+	<script type="text/javascript" src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.jscroll.js"></script>-->
+		<script type='text/javascript'>
+			var field = document.getElementById('field');
+			field.style.height = screen.height + 'px';
+			field.style.width = screen.width + 'px';
+
+			function addClover(){
+	            var randomClover = document.createElement('img');
+	            // pick random image
+	            randomClover.src = 'images/c' + (Math.floor(Math.random() * 16) + 1) + '.png'; 
+	            // set size
+	            randomClover.width = '100';
+	            // set position type + coordinates
+	            randomClover.style.position = 'fixed';
+	            randomClover.style.left = 
+	            ((Math.floor(Math.random() * screen.width)) - 50) + 'px';
+	            randomClover.style.top = 
+	            ((Math.floor(Math.random() * screen.height)) - 50) + 'px';
+	            // rotate randomly
+	            randomClover.style.transform = "rotate(" + 
+	              (Math.floor(Math.random() * 360)) + "deg)"
+
+	            field.appendChild(randomClover); 
+	        }
+
+	        function addField(){
+	        	var newField = document.createElement('div');
+	        	newField.style.height = screen.height + 'px';
+	        	newField.style.width = screen.width + 'px';
+	        	field.appendChild(newField);
+	        }
+
+	        var i;
+			for (i = 0; i < 400; i++) {
+	  			addClover();
+			}
+
+			var options = {
+			    loadingHtml: '',
+			    loadingFunction: addField(),
+			    padding: 2000,
+			};
+
+			$(function() {
+			    $('#field').jscroll(options);    
+			});
+		</script>	
+
+  	</body>
+</html>

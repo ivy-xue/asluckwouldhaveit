@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>as luck would have it</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    
+	<div id='field'></div>
+	<!--
+	<img src="images/clover.png" alt="A single clover." width="100px">
+    <h1>My main title</h1>
+	<p>At Mozilla, we’re a global community of</p>
+	<ul> 
+	  <li>technologists</li>
+	</ul>
+	<p>working together ... </p>
+	<a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
+
+	<script src="scripts/main.js"></script> -->
+	<script type='text/javascript'>
+		function addClover(){
+            var randomClover = document.createElement('img');
+            randomClover.src = 'images/c' + (Math.floor(Math.random() * 16) + 1) + '.png'; 
+            randomClover.width = '100';
+            randomClover.style.position = 'sticky';
+            randomClover.style.left = 
+            (Math.floor(Math.random() * screen.width) + 1) + 'px';
+                    
+            randomClover.style.top = 
+            (Math.floor(Math.random() * screen.height) + 1) + 'px';
+            document.getElementById('field').appendChild(randomClover); 
+        }
+
+        var i;
+		for (i = 0; i < 300; i++) {
+  			addClover();
+		}
+
+
+
+	</script>
+
+  </body>
+</html>
